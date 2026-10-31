@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEO•CHURN // E-Commerce Customer Churn Real-Time Problem Analysis</title>
+  
+  <!-- Modern Futuristic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Neon Dark Theme Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dynamic Cybernetic Background Canvas (Hex grid & E-Commerce nodes) -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="dashboard-container">
+    
+    <!-- ====================================================================
+         TOP HEADER BAR
+         ==================================================================== -->
+    <header class="header-bar glass-panel">
+      <div class="brand-wrapper">
+        <div class="brand-logo-icon">🛍️</div>
+        <div class="brand-titles">
+          <h1>NEO•CHURN // REAL-TIME INTELLIGENCE</h1>
+          <p>E-COMMERCE CUSTOMER RETENTION & PROBLEM ROOT-CAUSE ANALYSIS</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="stream-beacon">
+          <div class="beacon-dot" id="radarBeaconDot"></div>
+          <span id="radarStatusText">LIVE RADAR ACTIVE</span>
+        </div>
+        
+        <button id="streamToggleBtn" class="neon-btn active">⏸ PAUSE RADAR</button>
+        <button id="audioToggleBtn" class="neon-btn">🔊 SOUND ON</button>
+        <button id="exportReportBtn" class="neon-btn btn-magenta">📥 EXPORT INTELLIGENCE</button>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         EXECUTIVE KPI OVERVIEW DECK
+         ==================================================================== -->
+    <section class="kpi-grid">
+      <!-- KPI 1: Churn Rate -->
+      <div class="glass-panel kpi-card glow-magenta">
+        <div class="kpi-header">
+          <span class="kpi-title">Projected Churn Rate</span>
+          <span class="kpi-icon">📉</span>
+        </div>
+        <div class="kpi-value" id="kpiChurnRate">14.8%</div>
+        <div class="kpi-subtext">
+          <span class="trend-badge danger">CRITICAL</span>
+          <span>Target benchmark: &lt; 8.5%</span>
+        </div>
+      </div>
+
+      <!-- KPI 2: Revenue At Risk -->
+      <div class="glass-panel kpi-card glow-amber">
+        <div class="kpi-header">
+          <span class="kpi-title">Revenue At Risk (30D)</span>
+          <span class="kpi-icon">💰</span>
+        </div>
+        <div class="kpi-value" id="kpiRevenueAtRisk">$182,400</div>
+        <div class="kpi-subtext">
+          <span class="trend-badge danger">EXPOSURE</span>
+          <span>Calculated across 120 accounts</span>
+        </div>
+      </div>
+
+      <!-- KPI 3: Retention Index -->
+      <div class="glass-panel kpi-card glow-cyan">
+        <div class="kpi-header">
+          <span class="kpi-title">Retention Index</span>
+          <span class="kpi-icon">🛡️</span>
+        </div>
+        <div class="kpi-value" id="kpiRetentionRate">85.2%</div>
+        <div class="kpi-subtext">
+          <span class="trend-badge good">STABLE</span>
+          <span>Cohort health confidence: 96%</span>
+        </div>
+      </div>
+
+      <!-- KPI 4: Monitored Accounts -->
+      <div class="glass-panel kpi-card glow-lime">
+        <div class="kpi-header">
+          <span class="kpi-title">Active Cohort Monitored</span>
+          <span class="kpi-icon">👥</span>
+        </div>
+        <div class="kpi-value" id="kpiMonitoredCohort">120 Accts</div>
+        <div class="kpi-subtext">
+          <span class="trend-badge good">REAL-TIME</span>
+          <span>Streaming telemetry active</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         MAIN PROBLEM ANALYSIS & SCENARIO GRID
+         ==================================================================== -->
+    <main class="main-grid">
+      
+      <!-- LEFT COLUMN: Real-Time Charts, Root Cause Analysis, AI Insights -->
+      <div class="grid-col-left">
+        
+        <!-- Live Churn Velocity Trend Chart -->
+        <section class="glass-panel">
+          <div class="section-header">
+            <h2><span>⚡</span> Real-Time Churn Risk Trajectory</h2>
+            <span class="tag-counter">LIVE STREAM SAMPLING (2.4s)</span>
+          </div>
+          <div class="chart-box">
+            <div class="chart-header-metrics">
+              <div class="metric-pill">
+                <span class="pill-dot" style="background: var(--neon-cyan); box-shadow: var(--glow-cyan);"></span>
+                <span>Current Real-Time Churn Curve</span>
+              </div>
+              <div class="metric-pill">
+                <span class="pill-dot" style="background: var(--neon-crimson); box-shadow: 0 0 10px var(--neon-crimson);"></span>
+                <span>Critical Risk Threshold (18%)</span>
+              </div>
+            </div>
+            <div class="canvas-container">
+              <canvas id="trendChart"></canvas>
+            </div>
+          </div>
+        </section>
+
+        <!-- Problem Root Causes & Attribution Breakdown -->
+        <section class="glass-panel">
+          <div class="section-header">
+            <h2><span>🔬</span> Real-Time Problem Root Causes (Driver Attribution)</h2>
+            <span class="tag-counter">TOP CHURN TRIGGERS</span>
+          </div>
+          <div class="problem-breakdown-list" id="problemBreakdownList">
+            <!-- Dynamic Driver Progress Bars Injected via JS -->
+          </div>
+        </section>
+
+        <!-- Prescriptive Strategic AI Insights & Real-time Diagnosis -->
+        <section class="glass-panel">
+          <div class="section-header">
+            <h2><span>🧠</span> Real-Time Diagnostic Insights & Automated Solutions</h2>
+            <span class="tag-counter">PRESCRIPTIVE MITIGATION</span>
+          </div>
+          <div class="insights-deck" id="insightsDeck">
+            <!-- Dynamic Problem Diagnosis Cards Injected via JS -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN: What-If Scenario Simulator & Live Event Stream -->
+      <div class="grid-col-right">
+        
+        <!-- Interactive "What-If" Operational Simulator -->
+        <section class="glass-panel">
+          <div class="section-header">
+            <h2><span>🎛️</span> "What-If" Scenario Simulator</h2>
+            <span class="tag-counter">MACRO TUNING</span>
+          </div>
+          <div class="simulator-body">
+            
+            <!-- Slider 1: Delivery Delay -->
+            <div class="sim-slider-group">
+              <div class="sim-slider-label">
+                <span class="sim-slider-title">Shipping & Logistics Latency</span>
+                <span class="sim-slider-val" id="valDeliveryDelay">+0.0 Days</span>
+              </div>
+              <input type="range" id="simDeliveryDelay" min="-3" max="5" step="0.5" value="0">
+              <span style="font-size: 11px; color: var(--text-muted);">Simulate courier delays or expedited freight delivery</span>
+            </div>
+
+            <!-- Slider 2: Support Resolution Speed -->
+            <div class="sim-slider-group">
+              <div class="sim-slider-label">
+                <span class="sim-slider-title">Support Resolution Efficiency</span>
+                <span class="sim-slider-val" id="valSupportEfficiency">1.0x</span>
+              </div>
+              <input type="range" id="simSupportEfficiency" min="0.5" max="3.0" step="0.1" value="1.0">
+              <span style="font-size: 11px; color: var(--text-muted);">Faster dispute resolution reduces immediate customer attrition</span>
+            </div>
+
+            <!-- Slider 3: Proactive Retention Discount -->
+            <div class="sim-slider-group">
+              <div class="sim-slider-label">
+                <span class="sim-slider-title">Proactive Retention Discount</span>
+                <span class="sim-slider-val" id="valRetentionDiscount">5%</span>
+              </div>
+              <input type="range" id="simRetentionDiscount" min="0" max="30" step="5" value="5">
+              <span style="font-size: 11px; color: var(--text-muted);">Targeted win-back coupons for high cart-abandonment shoppers</span>
+            </div>
+
+            <!-- Impact Output Banner -->
+            <div class="sim-impact-banner">
+              <div class="impact-metric">
+                <span class="impact-title">Projected Revenue Saved</span>
+                <span class="impact-value" id="simProjectedSavings" style="color: var(--neon-lime);">+$41,200</span>
+              </div>
+              <div class="impact-metric">
+                <span class="impact-title">Model Confidence</span>
+                <span class="impact-value" style="color: var(--neon-cyan);">94.8%</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Live E-Commerce Activity & Anomaly Stream -->
+        <section class="glass-panel" style="flex-grow: 1;">
+          <div class="section-header">
+            <h2><span>📡</span> Live Customer Activity Feed</h2>
+            <span class="tag-counter">HIGH-VELOCITY</span>
+          </div>
+          <div class="stream-ticker-container" id="liveStreamTicker">
+            <!-- Dynamic Event Items Prepended Here via JS -->
+          </div>
+        </section>
+
+      </div>
+
+    </main>
+
+    <!-- ====================================================================
+         CUSTOMER RISK MATRIX & ACTION LEDGER
+         ==================================================================== -->
+    <section class="glass-panel">
+      <div class="section-header">
+        <h2><span>📋</span> Customer Risk Matrix & Real-Time Action Ledger</h2>
+        <span class="tag-counter">INDIVIDUAL DRILLDOWN</span>
+      </div>
+
+      <div class="roster-controls-bar">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="ALL">ALL ACCOUNTS</button>
+          <button class="filter-tab" data-filter="CRITICAL">CRITICAL RISK (&gt;75%)</button>
+          <button class="filter-tab" data-filter="HIGH">HIGH RISK (48-75%)</button>
+          <button class="filter-tab" data-filter="MODERATE">MODERATE (25-48%)</button>
+          <button class="filter-tab" data-filter="SAFE">SAFE (&lt;25%)</button>
+          <button class="filter-tab" data-filter="VIP">VIP TIER</button>
+        </div>
+
+        <div class="search-input-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="custSearchInput" placeholder="Filter by Name, ID, or Email...">
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="roster-table">
+          <thead>
+            <tr>
+              <th>Customer Profile</th>
+              <th>Segment</th>
+              <th>Churn Risk Index</th>
+              <th>Risk Tier</th>
+              <th>Primary Churn Trigger</th>
+              <th>CLV / Revenue Exposure</th>
+              <th>Dispatch Intervention</th>
+            </tr>
+          </thead>
+          <tbody id="customerTableBody">
+            <!-- Dynamic Customer Rows Injected Here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Toast Notification Stack -->
+  <div id="toast-container"></div>
+
+  <!-- Pure JavaScript Application Scripts -->
+  <script src="churnEngine.js"></script>
+  <script src="simulation.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
